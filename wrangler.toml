@@ -2,4 +2,7 @@ name = "abubakar-756-host-api"
 main = "worker.js"
 compatibility_date = "2026-09-01"
 
-# Secret: wrangler secret put DEPLOY_SECRET
+# Set secrets with Wrangler:
+# wrangler secret put CLOUDFLARE_API_TOKEN
+# wrangler secret put CLOUDFLARE_ACCOUNT_ID
+# wrangler secret put DEPLOY_SECRET
