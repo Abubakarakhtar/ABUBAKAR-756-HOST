@@ -1,25 +1,12 @@
-# ABUBAKAR 756 HOST — Stage 4
+ABUBAKAR 756 HOST — STAGE 5 FINAL
 
-Stage 4 adds ZIP/static-file uploads and Cloudflare Pages Direct Upload through a secure Worker.
+1. Upload the root frontend files to GitHub/Cloudflare Pages.
+2. Deploy worker/worker.js as a Cloudflare Worker.
+3. Add Worker secrets:
+   CLOUDFLARE_API_TOKEN
+   CLOUDFLARE_ACCOUNT_ID
+   DEPLOY_SECRET (optional but recommended)
+4. Open the host dashboard and enter the Worker URL.
+5. Upload a ZIP containing index.html at the ZIP root and deploy.
 
-## 1. Worker secrets
-Set these secrets on the Worker:
-- CLOUDFLARE_API_TOKEN — token with Pages Write permission
-- CLOUDFLARE_ACCOUNT_ID — your Cloudflare account ID
-- DEPLOY_SECRET — optional shared secret for your frontend
-
-Never put the Cloudflare API token in `index.html` or `app.js`.
-
-## 2. Deploy the Worker
-From the `worker` folder with Wrangler:
-`wrangler deploy`
-
-Or create a Worker in the Cloudflare dashboard and upload `worker.js`, then add the secrets under Worker Settings > Variables and Secrets.
-
-## 3. Use the Stage 4 site
-Enter the Worker URL, project name, and optional Deploy Secret. Choose ZIP upload or HTML mode. A ZIP must contain `index.html` at its root.
-
-Stage 4 upload limit is 8 MB total and 20,000 files. Cloudflare's Pages API supports direct-upload manifests and asset upload; this build uses that flow.
-
-## 4. Security
-Do not share your Cloudflare API token. If it is ever exposed, revoke/rotate it immediately.
+IMPORTANT: This project is a static frontend + Worker deployment gateway. It does not reproduce or extract private source code from any third-party hosting service. Cloudflare API credentials must remain Worker secrets.
