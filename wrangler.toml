@@ -1,8 +1,8 @@
 name = "abubakar-756-host-api"
 main = "worker.js"
-compatibility_date = "2026-09-01"
-
-# Set secrets with Wrangler:
+compatibility_date = "2026-09-15"
+# Set secrets in Cloudflare, never in frontend code:
 # wrangler secret put CLOUDFLARE_API_TOKEN
 # wrangler secret put CLOUDFLARE_ACCOUNT_ID
+# Optional:
 # wrangler secret put DEPLOY_SECRET
